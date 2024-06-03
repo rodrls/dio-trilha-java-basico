@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -11,19 +12,28 @@ public class ContaTerminal {
 
         System.out.println("Digite o numero da agencia");
         int numeroAgencia = scanner.nextInt();
-
+        
         System.out.println("Digite o numero da conta");
         String numeroConta = scanner.next();
-
+        
         System.out.println("Digite seu nome");
         String nomeCliente = scanner.next();
-
+        
         System.out.println("Digite seu sobrenome");
         String sobrenomeCliente = scanner.next();
 
-        System.out.println("Olá " + nomeCliente + " " + sobrenomeCliente + "! )Obrigado por criar uma conta em nosso banco, o numero de sua agência é: " + numeroAgencia + " e o numero de sua conta é: " +numeroConta);
+        scanner.close();
+        
+
+        System.out.println("Olá " + nomeCliente + " " + sobrenomeCliente + "! Obrigado por criar uma conta em nosso banco, o numero de sua agência é: " + numeroAgencia + " e o numero de sua conta é: " +numeroConta);
         System.out.println("Seu saldo de " +saldo +" já está disponível para saque");
         
+
+        
+        try{
+        }catch (InputMismatchException e){
+            System.out.println("error");
+        }
 
     }
 }
